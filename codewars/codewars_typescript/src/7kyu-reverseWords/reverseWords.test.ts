@@ -6,7 +6,7 @@ describe('reverseWords()', () => {
     expect(reverseWords('apple')).toBe('elppa')
     expect(reverseWords('double  spaced  words')).toBe('elbuod  decaps  sdrow')
     expect(reverseWords('The quick brown fox jumps over the lazy dog.')).toBe(
-      'ehT kciuq nworb xof spmuj revo eht yzal .god'
+      'ehT kciuq nworb xof spmuj revo eht yzal .god',
     )
   })
 })

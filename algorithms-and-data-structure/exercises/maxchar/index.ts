@@ -11,15 +11,17 @@ interface AnyObject {
 
 function maxChar(str: String): string {
   let charMap: AnyObject = {}
+  let currentMaxCount = 0
   let maxChar = ''
 
   str.split('').forEach(char => (charMap[char] ? charMap[char]++ : (charMap[char] = 1)))
 
-  Object.keys(charMap).forEach(char => {
-    if (charMap[char] > charMap[maxChar]) {
-      maxChar = charMap[char]
+  for (let char in charMap) {
+    if (charMap[char] > currentMaxCount) {
+      currentMaxCount = charMap[char]
+      maxChar = char
     }
-  })
+  }
   return maxChar
 }
 

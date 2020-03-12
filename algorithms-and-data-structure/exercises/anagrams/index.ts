@@ -8,6 +8,10 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+// "Hi there!!".replace(/[^\w]/g, "") => "Hithere"
 
-module.exports = anagrams;
+function anagrams(stringA: String, stringB: String) {
+  return false
+}
+
+export { anagrams }

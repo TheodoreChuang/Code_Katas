@@ -19,4 +19,5 @@ https://basarat.gitbook.io/typescript/intro-1/jest
 ## TODO
 
 - set up linting
+- set up pre-commit hooks (lint, test)
 - set up debugger for TS+Jest. Tried but failed

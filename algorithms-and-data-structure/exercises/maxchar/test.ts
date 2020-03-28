@@ -1,4 +1,4 @@
-import { maxChar } from './index'
+import { maxChar } from './'
 
 test('maxChar function exists', () => {
   expect(typeof maxChar).toEqual('function')

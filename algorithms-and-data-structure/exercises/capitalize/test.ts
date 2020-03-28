@@ -1,4 +1,4 @@
-import { capitalize } from './index'
+import { capitalize } from './'
 
 test('Capitalize is a function', () => {
   expect(typeof capitalize).toEqual('function')

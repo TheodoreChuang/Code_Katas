@@ -1,4 +1,4 @@
-import { steps, steps2, steps3 } from './index'
+import { steps, steps2, steps3 } from './'
 
 describe('steps()', () => {
   let consoleSpy = jest.spyOn(console, 'log')

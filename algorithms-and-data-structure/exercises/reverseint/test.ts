@@ -1,4 +1,4 @@
-import { reverseInt1 } from './index'
+import { reverseInt1 } from './'
 
 test('ReverseInt function exists', () => {
   expect(reverseInt1).toBeDefined()

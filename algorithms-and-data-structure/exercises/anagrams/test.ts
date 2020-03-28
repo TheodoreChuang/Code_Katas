@@ -1,4 +1,4 @@
-import { anagrams1, anagrams2 } from './index'
+import { anagrams1, anagrams2 } from './'
 
 test('anagrams function exists', () => {
   expect(typeof anagrams1).toEqual('function')

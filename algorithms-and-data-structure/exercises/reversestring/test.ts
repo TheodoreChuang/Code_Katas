@@ -1,4 +1,4 @@
-import { reverse1, reverse2, reverse3 } from './index'
+import { reverse1, reverse2, reverse3 } from './'
 
 test('Reverse function exists', () => {
   expect(reverse1).toBeDefined()

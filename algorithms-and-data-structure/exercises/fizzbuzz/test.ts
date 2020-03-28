@@ -1,4 +1,4 @@
-import { fizzBuzz } from './index'
+import { fizzBuzz } from './'
 
 describe('fizzBuzz()', () => {
   let consoleSpy = jest.spyOn(console, 'log')

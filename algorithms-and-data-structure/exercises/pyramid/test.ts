@@ -1,4 +1,4 @@
-import { pyramid, pyramid2, pyramid3 } from './index'
+import { pyramid, pyramid2, pyramid3 } from './'
 
 describe('pyramid()', () => {
   let consoleSpy = jest.spyOn(console, 'log')

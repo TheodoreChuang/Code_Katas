@@ -1,4 +1,4 @@
-import { palindrome1, palindrome2 } from './index'
+import { palindrome1, palindrome2 } from './'
 
 test('palindrome function is defined', () => {
   expect(typeof palindrome1).toEqual('function')

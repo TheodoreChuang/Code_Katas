@@ -16,8 +16,14 @@ Companion repo to a course on Udemy.com
 
 https://basarat.gitbook.io/typescript/intro-1/jest
 
+## Debugging
+
+https://github.com/Enterprise-JS/vscode-ts-node-debugging
+
+- Add ./.vscode/launch.json
+- npm i ts-node -D to debug TS files without needing to build
+
 ## TODO
 
 - set up linting
 - set up pre-commit hooks (lint, test)
-- set up debugger for TS+Jest. Tried but failed

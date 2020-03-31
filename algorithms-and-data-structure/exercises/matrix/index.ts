@@ -17,17 +17,11 @@
 
 type Matrix = null[][] | number[][]
 
-type Direction = 'right' | 'down' | 'left' | 'up'
-
-function createEmptyArray(n: number): null[] {
-  return Array(n).fill(null)
-}
-
 function createEmptyMatrix(n: number): Matrix {
   const emptyMatrix = Array(n).fill([])
 
   for (let row = 0; row < n; row++) {
-    emptyMatrix[row] = createEmptyArray(n)
+    emptyMatrix[row] = Array(n).fill(null)
   }
 
   return emptyMatrix
@@ -38,67 +32,42 @@ function createEmptyMatrix(n: number): Matrix {
  */
 function matrix(n: number): Matrix {
   const matrix = createEmptyMatrix(n)
+  const maxNum = n * n
+
   let topRow = 0
   let bottomRow = n - 1
   let leftColumn = 0
   let rightColumn = n - 1
-  let direction: Direction = 'right'
   let counter = 1
 
-  while (counter <= n * n) {
-    switch (direction) {
-      case 'right':
-        for (let i = leftColumn; i <= rightColumn; i++) {
-          matrix[topRow][i] = counter
-          counter++
-
-          if (i === rightColumn) {
-            topRow++
-            direction = 'down'
-          }
-        }
-        break
-      case 'down':
-        for (let i = topRow; i <= bottomRow; i++) {
-          matrix[i][rightColumn] = counter
-          counter++
-
-          if (i === bottomRow) {
-            rightColumn--
-            direction = 'left'
-          }
-        }
-        break
-      case 'left':
-        for (let i = rightColumn; i >= leftColumn; i--) {
-          matrix[bottomRow][i] = counter
-          counter++
-
-          if (i === leftColumn) {
-            bottomRow--
-            direction = 'up'
-          }
-        }
-        break
-      case 'up':
-        for (let i = bottomRow; i >= topRow; i--) {
-          matrix[i][leftColumn] = counter
-          counter++
-
-          if (i === topRow) {
-            leftColumn++
-            direction = 'right'
-          }
-        }
-        break
-      default:
-        console.warn('Unexpected direction, something broke!')
-        throw new Error('Unexpected direction, something broke!')
+  while (counter <= maxNum) {
+    /* top row */
+    for (let i = leftColumn; i <= rightColumn; i++) {
+      matrix[topRow][i] = counter
+      counter++
     }
-  }
+    topRow++
 
-  if (counter - 1 !== n * n) {
-    throw new Error('counter does not equal expected maximum number')
+    /* right column */
+    for (let i = topRow; i <= bottomRow; i++) {
+      matrix[i][rightColumn] = counter
+      counter++
+    }
+    rightColumn--
+
+    /* bottom row */
+    for (let i = rightColumn; i >= leftColumn; i--) {
+      matrix[bottomRow][i] = counter
+      counter++
+    }
+    bottomRow--
+
+    /* left column */
+    for (let i = bottomRow; i >= topRow; i--) {
+      matrix[i][leftColumn] = counter
+      counter++
+    }
+    leftColumn++
   }
 
   return matrix

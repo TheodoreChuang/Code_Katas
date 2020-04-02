@@ -8,6 +8,21 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+/** Queue Class (FIFO) */
+class Queue {
+  private queue: any[]
 
-module.exports = Queue;
+  constructor() {
+    this.queue = []
+  }
+
+  add(value: any) {
+    this.queue.push(value)
+  }
+
+  remove() {
+    return this.queue.shift()
+  }
+}
+
+export { Queue }

@@ -12,11 +12,7 @@
  * Queue Class (FIFO)
  */
 class Queue {
-  private queue: any[]
-
-  constructor() {
-    this.queue = []
-  }
+  private queue: any[] = []
 
   /**
    * Adds a value to the queue

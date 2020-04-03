@@ -10,6 +10,23 @@
 //   s.pop(); // returns 2
 //   s.pop(); // returns 1
 
-class Stack {}
+/**
+ * Stack Class (FILO)
+ */
+class Stack {
+  private stack: any[] = []
 
-module.exports = Stack;
+  push(item: any) {
+    this.stack.push(item)
+  }
+
+  pop() {
+    return this.stack.pop()
+  }
+
+  peek() {
+    return this.stack[this.stack.length - 1]
+  }
+}
+
+export { Stack }

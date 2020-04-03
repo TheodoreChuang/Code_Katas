@@ -32,11 +32,11 @@ import { Queue } from '../queue'
 function weave(sourceOne: Queue, sourceTwo: Queue) {
   const weaved = new Queue()
 
-  while(sourceOne.peek() !== undefined || sourceTwo.peek() !== undefined) {
-    if(sourceOne.peek() !== undefined) {
+  while(sourceOne.peek() || sourceTwo.peek()) {
+    if(sourceOne.peek()) {
       weaved.add(sourceOne.remove())
     }
-    if(sourceTwo.peek() !== undefined) {
+    if(sourceTwo.peek()) {
       weaved.add(sourceTwo.remove())
     }
   }

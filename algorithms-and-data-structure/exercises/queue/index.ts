@@ -8,7 +8,9 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-/** Queue Class (FIFO) */
+/**
+ * Queue Class (FIFO)
+ */
 class Queue {
   private queue: any[]
 
@@ -16,12 +18,25 @@ class Queue {
     this.queue = []
   }
 
+  /**
+   * Adds a value to the queue
+   */
   add(value: any) {
     this.queue.push(value)
   }
 
+  /**
+   * Returns the oldest item
+   */
   remove() {
     return this.queue.shift()
+  }
+
+  /**
+   * Returns next item *without* removing it.
+   */
+  peek() {
+    return this.queue[0]
   }
 }
 

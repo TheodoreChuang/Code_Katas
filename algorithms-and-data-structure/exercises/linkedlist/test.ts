@@ -21,9 +21,9 @@ describe('LinkedList() Class', () => {
     test('appends a node to the start of the list', () => {
       const l = new LinkedList()
       l.insertFirst(1)
-      expect(l.head.data).toEqual(1)
+      expect(l.getFirst()?.data).toEqual(1)
       l.insertFirst(2)
-      expect(l.head.data).toEqual(2)
+      expect(l.getFirst()?.data).toEqual(2)
     })
   })
 
@@ -108,7 +108,7 @@ describe('LinkedList() Class', () => {
       const l = new LinkedList()
       l.insertFirst('a')
       l.removeLast()
-      expect(l.head).toEqual(null)
+      expect(l.getFirst()).toEqual(null)
     })
 
     test('RemoveLast removes the last node when list is length 2', () => {
@@ -119,7 +119,7 @@ describe('LinkedList() Class', () => {
       l.removeLast()
 
       expect(l.size()).toEqual(1)
-      expect(l.head.data).toEqual('a')
+      expect(l.getFirst()?.data).toEqual('a')
     })
 
     test('RemoveLast removes the last node when list is length 3', () => {

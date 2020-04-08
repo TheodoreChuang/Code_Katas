@@ -12,8 +12,11 @@ class Node {
   }
 }
 
+/**
+ * Linked List (index zero)
+ */
 class LinkedList {
-  head: any | null = null
+  private head: Node | null = null
 
   size() {
     let counter = 0
@@ -88,7 +91,7 @@ class LinkedList {
   }
 
   removeFirst() {
-    this.head = this.head.next ? this.head.next : null
+    this.head = this.head?.next ? this.head.next : null
   }
 
   removeLast() {
@@ -104,12 +107,14 @@ class LinkedList {
       return
     }
 
-    while (currentNode.next) {
+    while (currentNode?.next) {
       previousNode = currentNode
       currentNode = currentNode.next
     }
 
-    previousNode.next = null
+    if (previousNode) {
+      previousNode.next = null
+    }
   }
 
   removeAt(index: number) {

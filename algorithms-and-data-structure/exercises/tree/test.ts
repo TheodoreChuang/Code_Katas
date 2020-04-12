@@ -1,8 +1,6 @@
-const T = require('./index')
-const Node = T.Node
-const Tree = T.Tree
+import { Node, Tree } from '.'
 
-describe.skip('Node', () => {
+describe('Node', () => {
   test('Node is a constructor', () => {
     expect(typeof Node.prototype.constructor).toEqual('function')
   })
@@ -29,39 +27,43 @@ describe.skip('Node', () => {
   })
 })
 
-describe.skip('Tree', () => {
+describe('Tree', () => {
   test('starts empty', () => {
     const t = new Tree()
     expect(t.root).toEqual(null)
   })
 
   test('Can traverse bf', () => {
-    const letters = []
+    const letters: any[] = []
     const t = new Tree()
     t.root = new Node('a')
     t.root.add('b')
     t.root.add('c')
     t.root.children[0].add('d')
+    t.root.children[1].add('e')
+    t.root.children[1].add('f')
 
-    t.traverseBF((node) => {
+    t.traverseBF((node: any) => {
       letters.push(node.data)
     })
 
-    expect(letters).toEqual(['a', 'b', 'c', 'd'])
+    expect(letters).toEqual(['a', 'b', 'c', 'd', 'e', 'f'])
   })
 
   test('Can traverse DF', () => {
-    const letters = []
+    const letters: any[] = []
     const t = new Tree()
     t.root = new Node('a')
     t.root.add('b')
-    t.root.add('d')
-    t.root.children[0].add('c')
+    t.root.add('c')
+    t.root.children[0].add('d')
+    t.root.children[1].add('e')
+    t.root.children[1].add('f')
 
-    t.traverseDF((node) => {
+    t.traverseDF((node: any) => {
       letters.push(node.data)
     })
 
-    expect(letters).toEqual(['a', 'b', 'c', 'd'])
+    expect(letters).toEqual(['a', 'b', 'd', 'c', 'e', 'f'])
   })
 })

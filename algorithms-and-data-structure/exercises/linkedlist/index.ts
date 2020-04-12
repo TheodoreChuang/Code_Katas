@@ -16,7 +16,7 @@ class Node {
  * Linked List (index zero)
  */
 class LinkedList {
-  private head: Node | null = null
+  head: Node | null = null
 
   size() {
     let counter = 0

@@ -26,4 +26,4 @@ https://github.com/Enterprise-JS/vscode-ts-node-debugging
 ## TODO
 
 - set up linting
-- set up pre-commit hooks (lint, test)
+- set up pre-commit hooks (lint)

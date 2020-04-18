@@ -1,8 +1,4 @@
-const S = require('./index')
-const bubbleSort = S.bubbleSort
-const selectionSort = S.selectionSort
-const mergeSort = S.mergeSort
-const merge = S.merge
+import { bubbleSort, selectionSort, mergeSort, merge } from '.'
 
 function getArray() {
   return [100, -40, 500, -124, 0, 21, 7]
@@ -13,7 +9,7 @@ function getSortedArray() {
 }
 
 describe('Bubble sort', () => {
-  test.skip('sorts an array', () => {
+  test('sorts an array', () => {
     expect(bubbleSort(getArray())).toEqual(getSortedArray())
   })
 })
